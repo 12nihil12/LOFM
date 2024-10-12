@@ -1,0 +1,4 @@
+1. Perchè per il calcolo della velocità non prendere tutto lo spazio percorso diviso il tempo
+2. per trovare ve/vr, si usano per ognuno ve,vr o si usa la media?
+3. Perchè diamine se plotto le coppie ottenute con c++ sono piu fitte che con python
+4. Con le formule date non vengono i raggi giusti?
