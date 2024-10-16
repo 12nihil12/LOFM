@@ -52,12 +52,14 @@ def calc_q_drop(dn):
     vis=vis_coef(T) #setta il coefficiente di viscosità per la temperatura data
     print("Coefficiente di viscosità: ",vis,"\n")
 
+    
     times="times/"+ dn + ".csv"
     output="output/" +dn + ".csv"
 
     if os.path.isfile(output):
         command="rm " + output
         os.system(command)
+
 
     #MODULO 1: RAGGIO (DV=0)
 
@@ -131,6 +133,8 @@ def S(Q,q):
 
 if os.path.isfile("Q.dat"):
     os.system("rm Q.dat")
+
+
 
 if len(sys.argv)!=2: 
     print("Syntax of ", sys.argv[0], " <how many drops> \n" )
