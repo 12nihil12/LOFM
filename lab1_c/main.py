@@ -32,7 +32,7 @@ data=pd.read_csv("data.csv") #frequenza, delta, delta err
 #w0=60*2*math.pi
 #d0=8.28#mm
 
-print(data)
+#print(data)
 
 n=int(data.size/3)
 
@@ -46,7 +46,7 @@ n=int(data.size/3)
 
 
 #plt.plot(w,d,"*")
-plt.plot(data["Dw"],data["Dd"],"*")
+plt.plot(data["Dw[rad/s]"],data["|Dd|[mm]"],".")
 
 # CONFRONTO CON RETTA ATTESA
 
@@ -56,8 +56,10 @@ x=np.arange(4000,10000,0.01)#omega
 y=k*x #delta
 
 plt.plot(x,y, "g")
-plt.xlabel("Dw [rad/s]")
-plt.ylabel("Dd [mm]")
+plt.xlabel("$\Delta \omega \; \mathrm{[rad/s]}$")
+plt.ylabel("$\Delta \delta \; \mathrm{[mm]}$")
+plt.legend([ "Punti sperimentali", r"Retta attesa con $ c=2.997 \cdot 10^{11} \mathrm{[m/s]}$"])
+plt.grid()
 plt.show()
 
 
