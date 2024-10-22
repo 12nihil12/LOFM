@@ -2,7 +2,17 @@ import pandas as pd
 import numpy as np 
 import math
 import matplotlib.pyplot as plt 
+import matplotlib 
+import scipy as sc
+from sklearn import linear_model
 
+font = {'family' : 'serif',
+         'size'   : 12,
+         'serif':  'cmr10'
+         }
+
+matplotlib.rc('font', **font)
+matplotlib.rcParams["mathtext.fontset"]="cm"
 
 # SPECIFICHE APPARATO (in mm)
 #fuochi
@@ -15,52 +25,134 @@ a=505 #distanza L2-specchio rotante
 b=f2*(D+a)/(D+a-f2) #distanza sorgente-L2
 
 
-def err_m (dw,dd,sw,sd):
-    k=(4*f2*D**2)/(D+a-f2)
-    inc= k*math.sqrt(sw**2/dd**2 + sd**2*dw**2/dd**4)
-
-    return inc 
-
-def err_s(sD,sa,sf2,wm,dm):
-    der_D= 4*f2*wm/dm * (D**2+2*a*D-2*f2*D)/(D+a -f2)**2
-    der_a = 4*f2*D**2*wm/dm*1/(D+a-f2)**2
-    der_f2=4*D**2*wm/dm*(D+a)/(D+a-f2)**2
-    inc= math.sqrt(der_D**2*sD**2 + der_a**2*sa**2+der_f2**2*sf2**2)
 
 # PRESA DATI
+
+
 data=pd.read_csv("data.csv") #frequenza, delta, delta err
-#w0=60*2*math.pi
-#d0=8.28#mm
 
-#print(data)
+data= data.reset_index()
 
-n=int(data.size/3)
-
-#w=np.zeros(n) #omega
-#d=np.zeros(n) #delta
+cw_w=np.array(1)
+cw_d=np.array(1)
+ccw_w=np.array(1)
+ccw_d=np.array(1)
 
 
-#for i in range (0,w.size):
-    #w[i]=2*math.pi*(data.iloc[i,1])-w0
-    #d[i]=(data.iloc[i,2])-d0
+for index, row in data.iterrows(): 
+    if row["senso"] == 'A': 
+        ccw_d=np.append(ccw_d,row["Dd[mm]"])
+        ccw_w=np.append(ccw_w,row["Dw[rad/s]"])
+    else: 
+        cw_d=np.append(cw_d,row["Dd[mm]"])
+        cw_w=np.append(cw_w,row["Dw[rad/s]"])
 
 
-#plt.plot(w,d,"*")
-plt.plot(data["Dw[rad/s]"],data["|Dd|[mm]"],".")
 
-# CONFRONTO CON RETTA ATTESA
+ccw_d=np.delete(ccw_d,0)
+ccw_w=np.delete(ccw_w,0)
+cw_w=np.delete(cw_w,0)
+cw_d=np.delete(cw_d,0)
+
+w=np.concatenate((cw_w,ccw_w))
+d=np.concatenate((abs(cw_d),ccw_d))
+
+
+
+plt.plot(cw_w,cw_d,"o")
+plt.plot(ccw_w,ccw_d,"s")
+
+
+reg_cw=linear_model.LinearRegression()
+reg_ccw=linear_model.LinearRegression()
+
+cw_w=cw_w.reshape(-1,1)
+reg_cw.fit(cw_w,cw_d)
+ccw_w=ccw_w.reshape(-1,1)
+reg_ccw.fit(ccw_w,ccw_d)
+
+x=np.arange(4000,10000,0.01)
+y=reg_cw.coef_ *x + reg_cw.intercept_
+
+print("Coefficienti regressione (punti senso orario) | m:", reg_cw.coef_, "| q:", reg_cw.intercept_)
+print("Coefficienti regressione (punti senso antiorario) | m:", reg_ccw.coef_, "| q:", reg_ccw.intercept_)
+
+
+plt.plot(x,y,"g")
+
+x=np.arange(4000,10000,0.01)
+y=reg_ccw.coef_ *x + reg_ccw.intercept_
+
+plt.plot(x,y,"r")
+
+
+ax = plt.gca()
+ax.set_xlim([4000, 10000])
+
 
 c=2.997*10**11 #velocità luce
 k=4*f2*D**2/((D+a-f2)*c)
-x=np.arange(4000,10000,0.01)#omega
+
+y=-k*x #delta
+
+plt.plot(x,y,"b")
+
+
 y=k*x #delta
 
-plt.plot(x,y, "g")
+plt.plot(x,y,"m")
+
+
+
+
+plt.rc('axes', unicode_minus=False)
 plt.xlabel("$\Delta \omega \; \mathrm{[rad/s]}$")
 plt.ylabel("$\Delta \delta \; \mathrm{[mm]}$")
-plt.legend([ "Punti sperimentali", r"Retta attesa con $ c=2.997 \cdot 10^{11} \mathrm{[m/s]}$"])
+plt.legend([ "Punti sperimentali(senso orario)","Punti sperimentali (senso antiorario)", "Fit","Fit",r"Retta attesa con $ c=2.997 \cdot 10^{11} [\mathrm{mm/s}]$",r"Retta attesa con $ c=2.997 \cdot 10^{11} [\mathrm{mm/s}]$"])
 plt.grid()
+
+
 plt.show()
+plt.savefig("lab1_c_1.eps",format="eps")
+plt.savefig("lab1_c_1.png",format="png")
+
+
+plt.close()
+
+
+reg=linear_model.LinearRegression()
+
+w=w.reshape(-1,1)
+reg.fit(w,d)
+w=w.reshape(-1,1)
+reg.fit(w,d)
+
+plt.plot(w,d,".")
+y=reg.coef_ *x + reg.intercept_
+plt.plot(x,y,"g")
+y=k*x #retta attesa
+plt.plot(x,y,"r")
+
+print("Coefficienti regressione | m:", reg.coef_, "| q:", reg.intercept_)
+
+
+ax.set_xlim([4000, 10000])
+
+plt.rc('axes', unicode_minus=False)
+plt.xlabel("$\Delta \omega \; \mathrm{[rad/s]}$")
+plt.ylabel("$ |\Delta \delta | \; \mathrm{[mm]}$")
+plt.legend([ "Punti sperimentali", "Fit",r"Retta attesa con $ c=2.997 \cdot 10^{11} [\mathrm{mm/s}]$"])
+plt.grid()
+
+plt.show()
+plt.savefig("lab1_c_2.eps",format="eps")
+plt.savefig("lab1_c_2.png",format="png")
+
+
+
+
+
+
 
 
 
