@@ -5,6 +5,17 @@ import sys
 import os
 import random as rn
 import matplotlib.pyplot as plt 
+import matplotlib
+
+
+
+font = {'family' : 'serif',
+         'size'   : 15,
+         'serif':  'cmr10'
+         }
+
+matplotlib.rc('font', **font)
+matplotlib.rcParams["mathtext.fontset"]="cm"
 
 
 # SETTING OF CONSTANTS
@@ -19,7 +30,7 @@ d=7.6*10**(-3)#distanza fra le armature !! VA MISURATA
 N=1000 #how many points in intervall
 
 def vis_coef (T): #coefficiente di viscosità al variare della temperatura (°C)
-        return (1.800 + 4.765*pow(10,-3)*(T-15))*pow(10,-5)
+        return round((1.800 + 4.765*pow(10,-3)*(T-15)),3)*pow(10,-5)
 
 def r(v_r,vis): #raggio della particella calcolato a partire da v_r 
     r=math.sqrt(pow((b/(2*p)),2)+9*vis*v_r/(2*g*(d_o-d_a)))- b/(2*p)
@@ -39,7 +50,7 @@ def v(data): # velocità particella
 def q(data_Vp,data_Vn,data0,DV): #carica
     E=DV/d
     r_0=round(data0.iloc[:,2].mean(),3)*10**(-6)
-    print(" \n r_0: " , r_0, " m \n")
+    print(" \n r_0: " ,'%.3f' % ( r_0*10**7), "e-7 m \n",sep="")
     data_Vp["q[C] (e-19)"]=round((-4/3*math.pi*r_0**3*(d_o-d_a)*(g/E)*(1-data_Vp["v[um/s]"]/data0["v[um/s]"]))*10**19,3)
     data_Vn["q[C] (e-19)"]=round((-4/3*math.pi*r_0**3*(d_o-d_a)*(g/(-E))*(1+data_Vn["v[um/s]"]/data0["v[um/s]"]))*10**19,3)
 
@@ -50,7 +61,7 @@ def calc_q_drop(dn):
     T=float(input("Temperatura (°C): "))
     #vis=1.83*10**(-5) 
     vis=vis_coef(T) #setta il coefficiente di viscosità per la temperatura data
-    print("Coefficiente di viscosità: ",vis,"\n")
+    print("Coefficiente di viscosità: ",'%.2f' % (vis*10**5),"e-5 Ns/m^2","\n",sep="")
 
     
     times="times/"+ dn + ".csv"
@@ -115,6 +126,8 @@ def calc_q_drop(dn):
 
 
     #Q=np.hstack((qn,qp))
+
+    print("\n")
     
 
     return 
@@ -158,8 +171,11 @@ for a in range(0,len(q)):
 
 
 plt.plot(q,S_q, ".")
-#plt.show()
+plt.xlabel(r"$q_{\omega} \;  [\mathrm{C}]$")
+plt.ylabel(r"$\sum_{i=1}^N \left( \frac{Q_i}{k_i(q_{\alpha})} - q_{\alpha}\right)^2$")
+plt.show()
 plt.savefig("plot.png",format='png')
+
 
 
 exit()
