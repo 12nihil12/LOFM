@@ -57,7 +57,7 @@ cw_d=np.delete(cw_d,0)
 w=np.concatenate((cw_w,ccw_w))
 d=np.concatenate((abs(cw_d),ccw_d))
 
-
+fig1, axs = plt.subplots(1, figsize=(8, 8))
 
 plt.plot(cw_w,cw_d,"o")
 plt.plot(ccw_w,ccw_d,"s")
@@ -86,8 +86,8 @@ y=reg_ccw.coef_ *x + reg_ccw.intercept_
 plt.plot(x,y,"r")
 
 
-ax = plt.gca()
-ax.set_xlim([4000, 10000])
+
+axs.set_xlim([4000, 10000])
 
 
 c=2.997*10**11 #velocità luce
@@ -113,11 +113,13 @@ plt.grid()
 
 
 plt.show()
-plt.savefig("lab1_c_1.eps",format="eps")
-plt.savefig("lab1_c_1.png",format="png")
+fig1.savefig("lab1_c_1.eps",format="eps")
+fig1.savefig("lab1_c_1.png",format="png")
 
 
-plt.close()
+
+
+fig2, axs = plt.subplots(1, figsize=(8, 8))
 
 
 reg=linear_model.LinearRegression()
@@ -136,7 +138,7 @@ plt.plot(x,y,"r")
 print("Coefficienti regressione | m:", reg.coef_, "| q:", reg.intercept_)
 
 
-ax.set_xlim([4000, 10000])
+axs.set_xlim([4000, 10000])
 
 plt.rc('axes', unicode_minus=False)
 plt.xlabel("$\Delta \omega \; \mathrm{[rad/s]}$")
@@ -145,8 +147,8 @@ plt.legend([ "Punti sperimentali", "Fit",r"Retta attesa con $ c=2.997 \cdot 10^{
 plt.grid()
 
 plt.show()
-plt.savefig("lab1_c_2.eps",format="eps")
-plt.savefig("lab1_c_2.png",format="png")
+fig2.savefig("lab1_c_2.eps",format="eps")
+fig2.savefig("lab1_c_2.png",format="png")
 
 
 
