@@ -40,7 +40,7 @@ def r(v_r,vis): #raggio della particella calcolato a partire da v_r
 
 def calcr(data0,vis): #aggiunge raggio particella a dataframe
     data0["r[um]"]=np.zeros(len(data0["t[s]"]))
-    for i in range(0,5):
+    for i in range(0,3):
         data0.loc[i, "r[um]"]=round((r((data0.loc[i,"v[um/s]"]*pow(10,-6)),vis))*10**6,3)
 """
 def v(data): # velocità particella
@@ -51,8 +51,8 @@ def v(data): # velocità particella
 """
 def v(data): # velocità particella
     data["v[um/s]"]=np.zeros(len(data["t[s]"]))
-    for i in range(0,5):
-        data.iloc[i, 1]= round((Dz/(data.iloc[i,0]))*10**6,1)
+    for i in range(0,3):
+        data.iloc[i, 1]= round( (Dz/(data.iloc[i,0]))*10**6,1)
 
 def q(data_Vp,data_Vn,data0,DV): #carica
     E=DV/d
@@ -64,7 +64,7 @@ def q(data_Vp,data_Vn,data0,DV): #carica
 def calc_q_drop(dn):
 
     #STARTUP 
-    print("Goccia ",dn)
+
     T=float(input("Temperatura (°C): "))
     #vis=1.83*10**(-5) 
     vis=vis_coef(T) #setta il coefficiente di viscosità per la temperatura data
@@ -81,7 +81,7 @@ def calc_q_drop(dn):
 
     #MODULO 1: RAGGIO (DV=0)
 
-    data0=pd.DataFrame(index=[0,1,2,3,4])
+    data0=pd.DataFrame(index=[0,1,2])
     #data0["t[s]"]=pd.read_excel("times.xlsx", sheet_name=dn,usecols="A")
     data0["t[s]"]=pd.read_csv(times,usecols=["t0[s]"])
    
@@ -99,8 +99,8 @@ def calc_q_drop(dn):
     while DV<=0 :
         DV=float(input("DV>0: "))
 
-    data_Vp=pd.DataFrame(index=[0,1,2,3,4])
-    data_Vn=pd.DataFrame(index=[0,1,2,3,4])
+    data_Vp=pd.DataFrame(index=[0,1,2])
+    data_Vn=pd.DataFrame(index=[0,1,2])
     #data_Vp["t[s]"]=pd.read_excel("times.xlsx",usecols="B")
     #data_Vn["t[s]"]=pd.read_excel("times.xlsx",usecols="C")
     data_Vp["t[s]"]=pd.read_csv(times,usecols=["tVp[s]"])
@@ -151,8 +151,8 @@ def S(Q,q):
 
 #MAIN
 
-#if os.path.isfile("Q.dat"):
-    #os.system("rm Q.dat")
+if os.path.isfile("Q.dat"):
+    os.system("rm Q.dat")
 
 if os.path.isfile("output/check.txt")==False:
     os.system("mkdir output")
@@ -165,7 +165,7 @@ if len(sys.argv)!=2:
     exit()
 
 
-for i in range(10,(int(sys.argv[1])+1)):
+for i in range(1,(int(sys.argv[1])+1)):
     dn="drop"+str(i)
     calc_q_drop(dn)
 
