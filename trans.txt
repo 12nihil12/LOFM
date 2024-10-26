@@ -1,0 +1,439 @@
+RELAZIONE DI
+LABORATORIO
+Esperienza di Millikan: misura della carica
+dell’elettrone
+Gruppo ME 5:
+Genovesi Sonia, matricola 944180
+Geremia Silvio Federico, matricola 942504
+Giorgi Alessandro, matricola 942180
+Data di consegna: 17 gennaio 2021
+Dipartimento di Fisica
+Anno Accademico 2020-21Indice
+Formule matematiche adoperate 2
+1 Introduzione 3
+2 Cenni storici 3
+3 Esperienza di Millikan 4
+4 Dispositivo di Millikan e descrizione dell’espe-
+rienza 6
+5 Analisi Dati 8
+5.1 Valutazione delle incertezze . . . . . . . . . . . . . 9
+6 Conclusione 10
+1Formule matematiche adoperate
+Media
+¯x=1
+NN∑
+n=1xn (1)
+Deviazione standard e dev. std. della media
+σ∼=s=√N∑
+i=1(xi−¯x)2
+N−1(2)
+σ¯x=σ√
+N∼=s√
+N(3)
+Propagazione errori
+∆G=⏐⏐⏐⏐⏐∂G
+∂x⏐⏐⏐⏐⏐∆x+⏐⏐⏐⏐⏐∂G
+∂y⏐⏐⏐⏐⏐∆y+... (4)
+σG=√(∂G
+∂x)2
+σ2
+x+(∂G
+∂y)2
+σ2
+y+ 2(∂G
+∂x)(∂G
+∂y)
+σxy+... (5)
+Teorema del limite centrale
+¯x=∑
+ai¯xi (6)
+σ2
+¯x=∑
+a2
+iσ2
+xi(7)
+Raggio della goccia
+r=√(b
+2p)2
++9ηv0
+2g(ρ0−ρa)−b
+2p(8)
+Carica della goccia
+q=−4πr3
+3(ρ0−ρa)g
+E(
+1 +|v|
+v0)
+(9)
+21 Introduzione
+L’esperienza è volta a misurare la velocità di sedimentazione di goccioline d’olio elettrica-
+mente cariche, prima in assenza e poi in presenza di un campo elettrico posto nella stessa
+direzione della forza peso, prima in un verso e poi nell’altro, per calcolarne il raggio, usa-
+to poi per determinare la carica elettrica posseduta da tali goccioline e quindi ricavare la
+carica dell’elettrone. Per fare ciò in laboratorio si utilizza il dispositivo e il metodo messo
+a punto in un primo momento da Thomson, e poi perfezionato da Millikan.
+2 Cenni storici
+Il celebre esperimento di J.J. Thomson fu possibile anche grazie a una serie di osservazioni
+sperimentali condotte dai suoi predecessori, come lo studio della scarica elettrica nei gas
+rarefatti, o la scoperta dei raggi catodici e la misura di tali raggi per scoprirne la loro na-
+tura. Thomson riuscì inﬁne a misurare il rapporto massa-carica che caratterizzava questa
+particelle costituenti i raggi catodici, ottenendo un valore dell’ordine di 10−11kg/C. Dalle
+misure elettrolitiche si sapeva già che tale rapporto per l’idrogeno era invece dell’ordine
+di10−8kg/Ce Thomson era convinto del fatto che la diﬀerenza in questi due rapporti
+fosse dovuta alla diﬀerenza tra la massa dell’idrogeno rispetto alla massa delle particelle
+catodiche, mentre la carica di tali particelle doveva essere uguale o almeno dello stesso
+ordine di grandezza della carica dello ione di idrogeno; si propose così di misurare il valore
+di tale carica. Iniziò determinando la carica degli ioni gassosi che si producevano durante
+l’elettrolisi e lo fece sulla base degli studi del ﬁsico scozzese Wilson che in quello stesso
+periodo stava studiando la formazione della nebbia e come gli ioni agiscano come nuclei
+di condensazione formando una gocciolina d’acqua quando il vapore viene rarefatto. Per
+prima cosa fece condensare le goccioline d’acqua che si formavano attorno agli ioni e in
+questo modo misurò sia la loro massa totale, Mt, che la loro carica totale, Qt, che, in-
+direttamente, il valore della massa media delle goccioline, m0, considerando il fatto che
+il moto di goccioline sferiche in aria, trascurando la spinta archimedea, si può descrivere
+come:
+m0a=m0g−6πηrv (10)
+dove r è il raggio della gocciolina e ηil coeﬃcente di viscosità dell’aria. Dunque il valor
+medio della carica q0della singola gocciolina si può ricavare come:
+q0=m0Qt
+Mt(11)
+Quando il moto della gocciolina si svolge in condizioni stazionarie, ovvero per a= 0e con
+la velocità uguale alla velocità limite, v=v∞, chiamando δla densità della gocciolina e
+misurando la sua velocità limite, si può ricavare il raggio della gocciolina e la sua massa
+con le seguenti espressioni:
+r=(9ηv∞
+2gδ)1
+2
+em0=4πδ
+3(9ηv∞
+2gδ)3
+2
+(12)
+Il ﬁsico Twonsend nel 1897, con questo metodo, trovò un valore della carica media dello
+ioneq0= 1.0·10−19C. Questo valore venne perfezionato da Wilson nel 1903 che nelle sue
+misure usò un nuovo dispositivo che sfruttava anche l’azione di un campo elettrico diretto
+come la forza peso, ottenendo come carica media q0= (0.7−1.4)·10−19C.
+Il merito di Millikan fu quello di misurare con precisione la carica presente sulla singola
+gocciolina invece di limitarsi a ottenere un valor medio dalla misura della carica di un
+elevato numero di goccioline, come i suoi predecessori.
+33 Esperienza di Millikan
+Millikan decise di usare, invece delle goccioline d’acqua condensate dagli ioni gassosi
+durante il processo di elettrolisi, delle goccioline microscopiche d’olio, prodotte da un
+normale spruzzatore, il quale riusciva a elettrizzare alcune delle goccioline uscenti per
+stroﬁnio, le quali possono essere ulteriormente caricate in laboratorio usando una sorgen-
+te al torio. L’apparato originariamente usato da Millikan può essere schematizzato nel
+seguente modo.
+immagine 1
+L’immagine schematizza l’apparato sperimentale originariamente usato da Millikan
+Millikan per misurare la carica elettrica sulla gocciolina d’olio per prima cosa misurò
+la velocità di sedimentazione della gocciolina in assenza di campo elettrico, E= 0. In
+condizioni di moto stazionario, se si chiama r il raggio della gocciolina, ρ0la densità della
+gocciolina d’olio, ρala densità dell’aria, νla viscosità dell’aria e v0la velocità limite della
+gocciolina in assenza di campo elettrico, il moto sarà descritto dalla seguente relazione:
+4πr3
+3(ρ0−ρa)g−6πηrv 0= 0 (13)
+Successivamente misurò la velocità di sedimentazione della gocciolina, che in questo caso
+si indica con v, in presenza di un campo elettrico E=±E0k: il moto stazionario della
+gocciolina in questo caso si può descrivere con
+4πr3
+3(ρ0−ρa)g−6πηrv +qE= 0 (14)
+In queste due relazioni il segno meno davanti al termine, che indica la presenza dell’attrito
+viscoso dell’aria, è dovuto al fatto che l’attrito ovviamente si oppone sempre al moto e
+quindi ha segno opposto rispetto alla velocità della gocciolina. Posso ottenere quindi il
+valore della carica della gocciolina proprio mettendo a sistema la (13) con la (14):
+q=−4πr3
+3(ρ0−ρa)g
+E(
+1−v
+v0)
+(15)
+4Se si ﬁssa l’asse z come diretto verso il basso, quando sulla gocciolina prevalgono forze
+dirette verso il basso, ovvero quando
+qE > 0oqE < 0e|qE|<4πr3
+3(ρ0−ρa)g
+allora in questo caso la velocità della gocciolina è positiva, v >0, e diretta verso il basso
+e la (15) si può riscrivere esplicitando il segno di v come:
+q=−4πr3
+3(ρ0−ρa)g
+E(
+1−v
+v0)
+(16)
+In questo caso quindi il segno di q dipende dal verso del campo elettrico, ma anche dal
+segno del rapportov
+v0. Quando invece sulla gocciolina prevalgono forze dirette verso l’alto,
+ovvero quando
+qE < 0e|qE|>4πr3
+3(ρ0−ρa)g
+allora in questo caso la velocità della gocciolina è negativa, v <0, e diretta verso l’alto, e
+la (15) si può riscrivere come:
+q=−4πr3
+3(ρ0−ρa)g
+E(
+1 +|v|
+v0)
+(17)
+In questo caso invece il segno della carica q dipende unicamente dal verso del campo
+elettrico.
+Poichè le quantità ρ0,ρa,g,Esono facilmente misurabili, per ottenere la carica q presen-
+te su una gocciolina d’olio basta misurare: la velocità limite v0della gocciolina e, per
+minimizzare gli errori dovuti ad eventuali eﬀetti dei moti convettivi dell’aria, è oppor-
+tuno eﬀettuare tale misura sia in assenza di campo elettrico, che in presenza di campo
+elettrico diretto prima verso l’alto e poi verso il basso, o viceversa; misurare il raggio r
+della gocciolina, ricavabile tramite la relazione (13), dopo aver determinato il coeﬃciente
+η. Infatti la viscosità eﬀettiva dell’aria, oltre a dipendere dalle condizioni di temperatura
+t, espressa nella seguente relazione in gradi centigradi, e di pressione pdell’aria presente
+nella cameretta di misura, espressa in pascal, dipende anche dal raggio della gocciolina
+secondo la seguente relazione:
+ηeff=η
+1 +b
+prdovce b è una costante dell’aria (18)
+Se metto a sistema la (13) con la (18), posso ricavare il raggio della gocciolina d’olio come:
+r=√(b
+2p)2
++9ηv0
+2g(ρ0−ρa)−b
+2p(19)
+5Si riporta qui di seguito una tabella con i valori delle costanti, presenti in tutte le
+formule appena illustrate, usati nei calcoli.
+4 Dispositivo di Millikan e descrizione dell’esperien-
+za
+Si riporta qui di seguito uno schema rappresentativo di tutte le componenti del dispositivo
+usato in laboratorio per condurre l’esperienza.
+immagine 2
+Schema del dispositivo di Millikan visto dall’alto
+Di particolare importanza è la camera di Millikan che è costituita dalla sede della
+sorgente di Torio 232, alla quale viene sovrapposto un distanziatore isolante e trasparente,
+sopra di questo, poi, è appoggiato l’elettrodo superiore, al centro del quale viene messo un
+piccolo cappuccio forato. Sopra l’elettrodo è collocato un cilindro più alto che costituisce
+la parete laterale della camera, nella parte bassa della quale si trova una lente sferica e
+sopra cui viene posto un coperchio di chiusura, nel quale è praticato un foro per inserire
+il beccuccio dello spruzzatore d’olio.
+In laboratorio per prima cosa si sono eﬀettuate, tramite l’utilizzo di un micrometro, 5
+misure dello spessore interno del distanziatore isolante, posto tra la sede della sorgente
+di Torio e l’elettrodo superiore, che sono state poi usate per determinare l’intensità del
+campo elettrico, come:
+E=∆V
+d(20)
+6In seguito si è eseguita la messa in bolla del dispositivo ed è stato necessario eﬀettuare
+dellepiccolecorrezionimediantelevitiﬁssateallabasedellapiattaforma. Successivamente
+si è ricomposta la camera di Millikan: sopra la sede della sorgente di Torio, già ﬁssata
+alla piattaforma, si è riposizionato il distanziale, seguito dall’elettrodo superiore e dalla
+parete laterale, sopra la quale si pone anche un piccolo peso per mantenerla in posizione.
+Posizionare la parete laterale è fondamentale in quanto è proprio essa ad avere la lente
+che serve a focalizzare la luce della lampada all’interno della camera.
+A questo punto si estrae l’ago dalla sua sede, che si trova, come nell’immagine sopra,
+a destra della camera di Millikan, e lo si inserisce nel foro che si trova nell’elettrodo
+superiore, si accende la lampada alogena e con il microscopio si mette a fuoco il reticolo,
+inparticolarelaquadrettaturapiùgrossa, dispessore 0,5mm, cheverràusatanellemisure.
+É necessario anche mettere a fuoco l’ago, ovvero fare in modo che il suo lato destro presenti
+la massima brillantezza, regolando la posizione orizzontale, e se necessario anche quella
+verticale, della lampada e, per completare la procedura di messa a punto del dispositivo,
+si estrae l’ago e lo si ripone nella sua sede, rimettendo il cappuccio forato sopra l’elettrodo
+superiore, e inﬁne si richiude la camera di Millikan con l’apposito coperchio.
+In seguito i cavi del generatore di tensione sono stati connessi e con un tester abbiamo
+misurato la resistenza elettrica con ∆V= 300V, in modo da determinare la temperatura
+dell’ambiente usando la seguente tabella di conversione tra resistenza in MΩe◦C:
+immagine 3
+temperatura corrispondente alla resistenza elettrica del termistore misurata
+Si è quindi veriﬁcato il funzionamento dello spruzzatore d’olio su un foglio di carta, si
+è posta la leva che si trova a sinistra della camera di Millikan nella posizione "Spruzzatore
+in funzione" e si è eseguito uno spruzzo all’interno della camera. Si è dunque controllato
+che fossero presenti diverse goccioline nel campo del reticolo e, per aumentare il numero
+di goccioline elettrizzate, si è attivata per una decina di secondi la sorgente di Torio.
+Per prima cosa si è misurato periodicamente il tempo di caduta di alcune goccioline in
+assenza di campo elettrico: ogni volta che la gocciolina aveva percorso un tratto di re-
+ticolo pari a un quadretto grande, pari a una distanza di 0.5mm, si è preso nota del
+tempo impiegato con un cronometro con sensibilità di 0.01s. Successivamente si genera
+un campo elettrico e si misura la velocità di sedimentazione della gocciolina in presenza
+di quest’ultimo sia quando questo è concorde alla forza peso sia quando è inverso, grazie
+ad un commutatore che permette di cambiare la polarità degli elettroni.
+Questa misura periodica del tempo di caduta consente di veriﬁcare se durante la sedimen-
+tazione la gocciolina ha mantenuto la quantità di carica che aveva inizialmente o se ha
+cambiato il suo stato di carica, in modo da poter scartare quelle misure relative all’inter-
+vallo di tempo nel quale si è prodotta la variazione dello stato di carica della gocciolina.
+Si sono eﬀettuate più misure possibili (in genere 5) per ogni gocciolina in tutti e tre gli
+stati e ad ogni set è stato necessario eseguire un nuovo spruzzo d’olio in quanto le gocce
+7tendevano a sparire. Si è fatta poi variare periodicamente la tensione ed è stata controllata
+la temperatura, che si è mantenuta stabile a 24◦C.
+5 Analisi Dati
+Si riportano in fondo alla relazione le 5 misure di d ottenute con il micrometro da cui si
+estrapola il valor medio con (1), pari a 7,08mm, e si calcola la deviazione standard del
+campione con (2): quest’ultimo valore pari a 0,004mmrisulta un decimo della sensibiltà
+dello strumento, uguale a 0.01mm, e perciò sarà trascurato in seguito.
+Da ogni misura del tempo t che le gocce hanno impiegato per percorrere una distanza di
+0,5mm, si ricava prima la velocità della goccia con
+v0=x
+t=0,5mm
+t(21)
+da cui poi si ricava il raggio della goccia con (8). Si genera poi il campo elettrico e si
+ricava con la stessa formula la velocità v1con E rivolto verso il basso e v2con E dalla
+parte opposta, con le quali si rilevano due stime di carica Q con la (9). Come riportato in
+fondo alla relazione, sono stati rilevati 8 set di misurazione, e quindi sono stati eﬀettuati
+8 spruzzi d’olio, per un totale di 84 valori di carica Q, da cui poi ne sono stati considerati
+validi solamente un numero N= 36: infatti, come meglio spiegato nelle descrizioni alle
+tabelle, spesso si sono veriﬁcati comportamenti anomali delle cariche dovuti ad errori di
+misurazione del tempo oppure a variazioni di velocità non causati da una perdita di carica
+della goccia.
+Le misure di Q raccolte sono quindi dei multipli interi della carica elementare e si può
+quindi costruire una funzione di scarto tra il valore vero di q e il valore da noi ricavato
+come rapporto tra Qie l’intero più vicino al rapporto ki=Qi
+qe
+S(q) =N∑
+i=1(Qi
+ki−qe)2(22)
+immagine 4
+Rappresentazione della funzione scarto deﬁnita in (22)
+Il valore più probabile di carica elementare misurato in laboratorio sarà quindi il
+minimo della funzione (22), che, mediante lo studio della derivata, si ricava con
+q=1
+NN∑
+i=1Qi
+ki(23)
+8e con i dati a disposizione si ottiene un valore di q= 1,74·10−19.
+5.1 Valutazione delle incertezze
+Il valore di q ricavato con questo procedimento è aﬀetto da un errore casuale, dovuto a
+ﬂuttuazioni statistiche e alla sensibilità del cronometro, e da un errore sistematico dovuto
+invece alla precisione degli strumenti utilizzati. Il primo tipo di incertezza si può valutare
+dalla deviazione standard della media sugli scarti tra q e i valori delle cariche Qie si
+ottiene quindi
+σcas=√S(q)
+N(N−1)(24)
+Le incertezze sistematiche sono date invece dalle precisioni degli strumenti utilizzati
+per la misura della distanza d tra gli elettrodi ( σd= 10−5mm) e per la misura del po-
+tenziale (σV= 1V), mentre si considerano esatte le costanti utilizzate e riassunte in una
+tabella superiore. Si procede quindi applicando la propagazione degli errori (5) alla sola
+formula (9) derivando rispetto a d e a V, così da ottenere:
+σsist
+V=4
+3πr3(ρolio−ρaria)gd
+V2⏐⏐⏐⏐1−vE
+v0⏐⏐⏐⏐σV (25)
+σsist
+d=4
+3πr3(ρolio−ρaria)g
+V⏐⏐⏐⏐1−vE
+v0⏐⏐⏐⏐σd (26)
+σsist=√
+(σsist
+d)2+ (σsist
+V)2 (27)
+Si è deciso di scegliere come valore di r la media aritmetica (1) dei raggi, che sono
+soggetti solo ad errore casuale, per i valori delle velocità si è calcolato prima il valore del
+rapportovE
+v0per ogni misura presa e poi si esegue la media (1) con queste. Si riportano
+di seguito i risultati ottenuti:
+[C]
+σsist
+V 1,05·10−21
+σsist
+d 4,02·10−22
+σsist 1,12·10−21
+σcas6,14·10−21
+L’errore totale si può quindi calcolare con
+σq=√
+σ2
+sist+σ2
+cas (28)
+e si ottiene così
+[C]
+q1,74·10−19
+σq6,24·10−21
+Con il risultato ottenuto si può eﬀettuare un test di compatibilità con il valore univer-
+salmente accettato qe= 1,6·10−19con una distribuzione gaussiana, in quanto si dispone
+di un buon numero di misure, con la z
+9z=q−qe
+σq= 2,25 (29)
+che restituisce quindi una compatibilità di circa 2%.
+6 Conclusione
+La misura della carica elementare ricavata non risulta essere compatibile con quella uni-
+versalmente riconosciuta: il risultato del confronto tra una distribuzione gaussiana e i
+risultati ottenuti restituisce un valore inferiore al 5%, soglia di compatibilità usata comu-
+nemente. Il risultato, infatti, risulta essere superiore a qedi circa il 10%e non si pensa
+che la causa possa essere una sottostima dell’errore, in quanto questo è circa il 4%della
+misura della carica e introdurre altri fattori di errori, per esempio sulle costanti, risulta
+essere eccessivo. Si crede perciò che il problema sia un numero non suﬃciente di dati, che
+rende il valore di sintesi ricavato discosto da quello reale, come testimoniato da un errore
+casuale molto elevato, 6 volte maggiore rispetto a quello sistematico, e dalla scelta di
+scartare più della metà delle misure eﬀettuate a causa di anomalie nei valori di carica da
+essa ricavata. Sarebbe quindi necessario ripetere la stessa esperienza con più misurazioni
+per ottenere il valore della carica dell’elettrone.
+10Tabelle dati
+d[mm]
+7,08
+7,09
+7,08
+7,08
+7,08
+Misure eﬀettuate della distanza d con il micrometro
+V[V] 0 |V|[V] 300 |E|[V/m] 42373
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+12,613,97E−55,84E−73,44 1,45E−44,41E−19 4,42 1,13E−46,37E−19
+27,1634,4E−6540,7E−96,99 1,41E−44,08E−19 9,81 9,28E−54,87E−19
+39,3241,1E−6595,0E−911,161,20E−43,36E−1914,581,05E−46,22E−19
+52,3538,4E−6573,5E−915,311,20E−43,36E−1919,969,29E−55,37E−19
+65,6237,7E−6567,9E−919,541,18E−43,26E−19 26,28,01E−54,77E−19
+Primo set di dati misurato e scartato in quanto la carica, soprattutto con campo discorde,
+avrebbe un comportamento anomalo, prima decrescendo e poi aumentando
+V[V] 0 |V|[V] 300 |E|[V/m] 42373
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+22,34 2,24E−54,29E−72,84 1,76E−44,52E−19 2,51 1,99E−46,51E−19
+47,93 1,95E−53,99E−75,34 2,00E−44,87E−19 6,14 1,38E−44,24E−19
+75,84 1,79E−53,80E−77,92 1,94E−44,49E−19 9,62 1,44E−44,12E−19
+98,52 2,20E−54,26E−710,881,69E−44,28E−1913,081,45E−44,85E−19
+123,591,99E−54,03E−713,581,85E−44,51E−1917,071,25E−43,97E−19
+Secondo set di dati misurato
+11V[V] 0 |V|[V] 250 |E|[V/m] 35311
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+31,06 1,61E−53,58E−73,26 1,53E−43,27E−19 3,52 1,42E−43,76E−19
+63,16 1,56E−53,52E−76,95 1,36E−42,79E−19 7,06 1,41E−43,65E−19
+95,02 1,57E−53,53E−710,111,58E−43,34E−1910,741,36E−43,55E−19
+131,341,38E−53,29E−713,021,72E−43,39E−19 14,51,33E−43,15E−19
+165,571,46E−53,40E−716,381,49E−43,00E−1918,381,29E−43,20E−19
+Terzo set di dati misurato
+V[V] 0 |V|[V] 270 |E|[V/m] 38136
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+59,38,43E−62,50E−76,32 7,91E−51,08E−19 6,47,81E−51,33E−19
+110,899,69E−62,70E−711,599,49E−51,44E−1913,137,43E−51,42E−19
+167,428,84E−62,56E−717,588,35E−51,18E−1922,035,62E−51,03E−19
+223,828,87E−62,57E−722,89,58E−51,38E−1928,727,47E−51,33E−19
+278,39,18E−62,62E−728,718,46E−51,23E−19 35,57,37E−51,35E−19
+Quarto set di dati misurato, ma scartato in quanto Q è inferiore alla carica elementare
+V[V] 0 |V|[V] 290 |E|[V/m] 40960
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+45,15 1,11E−52,91E−73,23 1,55E−42,67E−19 4,46 1,12E−42,28E−19
+84,45 1,27E−53,15E−76,63 1,47E−42,74E−19 8,13 1,36E−43,03E−19
+118,291,48E−53,42E−79,79 1,58E−43,23E−1912,231,22E−43,08E−19
+165,421,06E−52,84E−713,391,39E−42,31E−1916,231,25E−42,44E−19
+206,371,22E−53,07E−716,271,74E−43,20E−1920,131,28E−42,78E−19
+Quinto set di dati misurato, ma scartato in quanto la misura del raggio e di conseguenza
+le cariche tendono a ﬂuttuare molto
+V[V] 0 |V|[V] 300 |E|[V/m] 42373
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+60,32 8,29E−62,47E−71,82,78E−44,08E−19 1,69 2,96E−44,61E−19
+126,927,51E−62,34E−73,83 2,46E−43,37E−19 3,62,62E−43,80E−19
+190,867,82E−62,39E−75,65 2,75E−43,88E−19 5,78 2,29E−43,45E−19
+241,599,86E−62,73E−77,32 2,99E−44,96E−19 7,81 2,46E−44,38E−19
+294,329,48E−62,67E−79,27 2,56E−44,11E−1910,112,17E−43,78E−19
+Sesto set di dati misurato e scartato perchè la carica aumenta in modo anomalo
+12V[V] 0 |V|[V] 250 |E|[V/m] 35311
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+24,21 2,07E−54,11E−72,96 1,69E−44,14E−19 7,65 6,54E−52,40E−19
+50,34 1,91E−53,94E−76,24 1,52E−43,55E−1915,746,18E−52,15E−19
+77,74 1,82E−53,84E−79,51,53E−43,49E−1922,787,10E−52,30E−19
+102,742,00E−54,04E−712,871,48E−43,51E−1931,665,63E−52,09E−19
+124,182,33E−54,39E−716,521,37E−43,43E−1939,866,10E−52,54E−19
+146,732,22E−54,27E−720,221,35E−43,30E−1948,275,95E−52,39E−19
+Settimo set di dati misurato, ma di cui viene scartata la prima riga in quanto è stata
+misurata in condizioni di poca visibilità poichè si è tentato di fare sei misure per set
+V[V] 0 |V|[V] 260 |E|[V/m] 36723
+t[s]v0[m/s]r[m]t[s]v1[m/s]Q[C]t[s]v2[m/s]Q[C]
+41,96 1,19E−53,03E−71,96 2,55E−44,74E−19 4,76 1,05E−42,28E−19
+81,32 1,27E−53,14E−74,11 2,33E−44,47E−19 9,52 1,05E−42,40E−19
+127,911,07E−52,86E−75,95 2,72E−44,74E−19 13,71,20E−42,37E−19
+176,071,04E−52,81E−77,95 2,50E−44,25E−1918,341,08E−42,10E−19
+217,131,22E−53,07E−79,48 3,27E−46,22E−1922,541,19E−42,60E−19
+255,141,32E−53,20E−7 11 3,29E−46,58E−1926,861,16E−42,68E−19
+Ottavo set di dati misurato, di cui vengono scartate le misure con E verso il basso poichè
+la carica aumenta di 2e
+13

@@ -57,7 +57,7 @@ cw_d=np.delete(cw_d,0)
 w=np.concatenate((cw_w,ccw_w))
 d=np.concatenate((abs(cw_d),ccw_d))
 
-fig1, axs = plt.subplots(1, figsize=(8, 8))
+fig1, axs = plt.subplots(1, figsize=(8,8))
 
 plt.plot(cw_w,cw_d,"o")
 plt.plot(ccw_w,ccw_d,"s")
@@ -112,6 +112,7 @@ plt.legend([ "Punti sperimentali(senso orario)","Punti sperimentali (senso antio
 plt.grid()
 
 
+
 plt.show()
 fig1.savefig("lab1_c_1.eps",format="eps")
 fig1.savefig("lab1_c_1.png",format="png")
@@ -122,6 +123,7 @@ fig1.savefig("lab1_c_1.png",format="png")
 fig2, axs = plt.subplots(1, figsize=(8, 8))
 
 
+
 reg=linear_model.LinearRegression()
 
 w=w.reshape(-1,1)
@@ -129,13 +131,17 @@ reg.fit(w,d)
 w=w.reshape(-1,1)
 reg.fit(w,d)
 
+print("Coefficienti regressione (|Dd|) | m:", reg.coef_, "| q:", reg.intercept_)
+
+
+
+
 plt.plot(w,d,".")
 y=reg.coef_ *x + reg.intercept_
 plt.plot(x,y,"g")
 y=k*x #retta attesa
 plt.plot(x,y,"r")
 
-print("Coefficienti regressione | m:", reg.coef_, "| q:", reg.intercept_)
 
 
 axs.set_xlim([4000, 10000])

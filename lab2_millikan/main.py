@@ -17,8 +17,7 @@ font = {'family' : 'serif',
 matplotlib.rc('font', **font)
 matplotlib.rcParams["mathtext.fontset"]="cm"
 
-#Resistance
-#1984
+
 
 # SETTING OF CONSTANTS
 b=8.2*pow(10,-3) #parametro
@@ -57,14 +56,16 @@ def v(data): # velocità particella
 def q(data_Vp,data_Vn,data0,DV): #carica
     E=DV/d
     r_0=round(data0.iloc[:,2].mean(),3)*10**(-6)
+    v_r=round(data0.iloc[:,1].mean(),3)
     print(" \n r_0: " ,'%.3f' % ( r_0*10**7), "e-7 m \n",sep="")
-    data_Vp["q[C] (e-19)"]=round((-4/3*math.pi*(data0["r[um]"]*10**(-6))**3*(d_o-d_a)*(g/E)*(1-data_Vp["v[um/s]"]/data0["v[um/s]"]))*10**19,3)
-    data_Vn["q[C] (e-19)"]=round((-4/3*math.pi*(data0["r[um]"]*10**(-6))**3*(d_o-d_a)*(g/(-E))*(1+data_Vn["v[um/s]"]/data0["v[um/s]"]))*10**19,3)
+    data_Vp["q[C] (e-19)"]=round((-4/3*math.pi*r_0**3*(d_o-d_a)*(g/E)*(1-data_Vp["v[um/s]"]/v_r))*10**19,3)
+    data_Vn["q[C] (e-19)"]=round((-4/3*math.pi*r_0**3*(d_o-d_a)*(g/(-E))*(1+data_Vn["v[um/s]"]/v_r))*10**19,3)
 
 def calc_q_drop(dn):
 
+
     #STARTUP 
-    print("Goccia ",dn)
+    print(dn)
     T=float(input("Temperatura (°C): "))
     #vis=1.83*10**(-5) 
     vis=vis_coef(T) #setta il coefficiente di viscosità per la temperatura data
@@ -151,24 +152,34 @@ def S(Q,q):
 
 #MAIN
 
-#if os.path.isfile("Q.dat"):
-    #os.system("rm Q.dat")
-
-if os.path.isfile("output/check.txt")==False:
-    os.system("mkdir output")
-    os.system("> output/check.txt")
 
 
-
-if len(sys.argv)!=2: 
-    print("Syntax of ", sys.argv[0], " <how many drops> \n" )
+if len(sys.argv)!=3: 
+    print("Syntax of ", sys.argv[0], " <how many drops>  <mode> \n mode= f -fresh start \n mode=a -add drop" )
     exit()
 
 
-for i in range(10,(int(sys.argv[1])+1)):
-    dn="drop"+str(i)
-    calc_q_drop(dn)
 
+
+if(sys.argv[2]=="f"): 
+    if os.path.isfile("Q.dat"):
+        os.system("rm Q.dat")
+
+    if os.path.isfile("output/check.txt")==False:
+        os.system("mkdir output")
+        os.system("> output/check.txt")
+
+    for i in range(1,(int(sys.argv[1])+1)):
+        dn="drop"+str(i)
+        calc_q_drop(dn)
+
+elif(sys.argv[2]=="a"): 
+    d=int(sys.argv[1])
+    for i in range(d,(d+1)):
+        dn="drop"+str(i)
+        calc_q_drop(dn)
+elif(sys.argv[2]=="q"): 
+    print("Graphing from file <Q.dat>")
 
 Q=np.loadtxt("Q.dat")
 
