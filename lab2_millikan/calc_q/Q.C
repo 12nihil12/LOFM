@@ -13,7 +13,8 @@ double S(double * Q, double q);
 
 int main(){
 
-    TApplication app("app",0,0);
+    cout << "Hi"; 
+
 
     ifstream in; 
     in.open("Q.dat"); 
@@ -21,12 +22,15 @@ int main(){
         return 0; 
     }
 
-    double Q[80]; 
+    cout << "Hi"; 
 
-    for (int i=0; i < 80; i++){
+    double Q[90]; 
+
+    for (int i=0; i < 90; i++){
         in >> Q[i]; 
     }
 
+    cout << "Hi"; 
 
     double q[200]; 
 
@@ -54,11 +58,13 @@ int main(){
 
     }
 
+    TCanvas c;
 
     auto g= new TGraph(200,q,S_q);
     g->Draw("AC*"); 
-    app.Run();
-        
+
+    
+    c.SaveAs("plot.pdf");
 
     
 
