@@ -169,7 +169,7 @@ if(sys.argv[2]=="f"):
         os.system("mkdir output")
         os.system("> output/check.txt")
 
-    for i in range(1,(int(sys.argv[1])+1)):
+    for i in range(1,11):
         dn="drop"+str(i)
         calc_q_drop(dn)
 
